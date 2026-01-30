@@ -1,0 +1,42 @@
+@startuml
+title Where development artifacts actually live
+
+skinparam style strictuml
+left to right direction
+
+' ===== Artifacts =====
+artifact Code
+artifact "Bug Report" as Bug
+artifact Requirements
+artifact "Prioritised Requirements" as PR
+together{
+artifact "Test Cases (expected results)" as TCH
+artifact "Test Cases (inputs)" as TCM
+artifact "Test Runner" as TR
+}
+artifact "Release Notes" as RN
+
+' ===== Storage / Systems =====
+node JIRA
+node Confluence
+node "Windows Network" as Win
+node Email
+
+' ===== Mappings =====
+Bug --> JIRA
+
+Requirements --> Confluence
+PR --> JIRA
+
+Code --> Confluence
+Code --> Win
+
+TCH --> Confluence
+TCM --> Win
+
+TR --> Win
+
+RN --> Confluence
+RN --> Email
+
+@enduml
