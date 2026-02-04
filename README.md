@@ -1,4 +1,4 @@
-# how-software-actually-gets-built
+# how-software-actually-got-built
 
 Two diagrams.
 
